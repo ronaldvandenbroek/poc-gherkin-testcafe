@@ -4,7 +4,8 @@
   "description": "A proof of concept testing the coupling between Gherkin-TestCafé and Allure.",
   "main": "",
   "scripts": {
-    "test": "node tests/e2e/runner.js"
+    "test:command": "npx gherkin-testcafe firefox tests/steps/*.js tests/features/*.feature",
+    "test:runner": "node tests/runner.js"
   },
   "keywords": [],
   "author": "Ronald van den Broek",
