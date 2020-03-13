@@ -10,6 +10,10 @@
   "keywords": [],
   "author": "Ronald van den Broek",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ronaldvandenbroek/poc-gherkin-testcafe.git"
+  },
   "dependencies": {
     "cucumber": "^5.1.0",
     "gherkin-testcafe": "^2.5.0",

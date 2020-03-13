@@ -1,5 +1,5 @@
 # poc-gherkin-testcafe
- A proof of concept testing the coupling between Gherkin, TestCafé and Allure.
+ A proof of concept testing the coupling between Gherkin (using Cucumber) and TestCafé.
  
 ## Setup
 [Gherkin-TestCafé](https://github.com/kiwigrid/gherkin-testcafe)
@@ -24,5 +24,3 @@
  Run the tests:
  
  `npm run test:command` or `npm run test:runner`
- 
- `// TODO: runner.js can't currently be used to run tests`

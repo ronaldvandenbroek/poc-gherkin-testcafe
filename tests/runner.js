@@ -1,14 +1,28 @@
 // const createTestCafe = require('testcafe');
 const createTestCafe = require('gherkin-testcafe');
 
-module.exports = async () => {
-    const testcafe = await createTestCafe();
-    const runner = await testcafe.createRunner();
-    // const remoteConnection = await testcafe.createBrowserConnection();
+(async () => {
+    console.log(`Starting runner.js`)
+    const testcafe = await createTestCafe()
+    // const runner = testcafe.createLiveModeRunner()
+    const runner = testcafe.createRunner()
 
-    return runner
+    const failedCount = await runner
         .src(['tests/steps/*.ts', 'tests/steps/*.js', 'tests/features/*.feature'])
-        .tsConfigPath('tsconfig.json')
-        .browsers('firefox')
-        .run();
-};
+        .browsers('firefox:headless')
+        .reporter([
+            {
+                name: 'spec',
+            },
+        ])
+        .screenshots(
+            'tests/screenshots',
+            true,
+            '${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png',
+            true,
+        )
+        .run()
+
+    console.error(`TestCafé failed tests: ${failedCount}`)
+    testcafe.close()
+})()
