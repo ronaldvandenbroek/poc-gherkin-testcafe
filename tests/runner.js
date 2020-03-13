@@ -7,7 +7,8 @@ module.exports = async () => {
     // const remoteConnection = await testcafe.createBrowserConnection();
 
     return runner
-        .src(['tests/steps/*.js', 'tests/features/*.feature'])
+        .src(['tests/steps/*.ts', 'tests/steps/*.js', 'tests/features/*.feature'])
+        .tsConfigPath('tsconfig.json')
         .browsers('firefox')
         .run();
 };
