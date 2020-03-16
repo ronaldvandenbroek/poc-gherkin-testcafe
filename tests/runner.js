@@ -14,6 +14,9 @@ const createTestCafe = require('gherkin-testcafe');
             {
                 name: 'spec',
             },
+            {
+                name: 'allure',
+            },
         ])
         .screenshots(
             'tests/screenshots',

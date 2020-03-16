@@ -1,5 +1,5 @@
 # poc-gherkin-testcafe
- A proof of concept testing the coupling between Gherkin (using Cucumber) and TestCafé.
+ A proof of concept testing the coupling between Gherkin (using Cucumber), TestCafé and Allure.
  
 ## Setup
 [Gherkin-TestCafé](https://github.com/kiwigrid/gherkin-testcafe)
@@ -25,3 +25,31 @@
  Run the tests:
  
  `npm run test:command` or `npm run test:runner`
+
+ ## Test reporter
+ To create a visual report [Allure](http://allure.qatools.ru/) can be used together with the [testcafe-reporter-allure](https://www.npmjs.com/package/testcafe-reporter-allure) package.
+
+ Install the integration and Allure commandline:
+
+ `npm install testcafe-reporter-allure`
+
+ `npm install -g allure-commandline`
+
+ To generate the results add the following to the `runner.js` file.
+
+  ```
+  .reporter([
+    {
+        name: 'allure',
+    },
+  ])
+  ```
+
+  or add `--reporter allure` to the command.
+
+  To visualise the results in a report run the following command in the root of the project:
+
+  `allure generate allure/allure-results --clean -o allure/allure-report && allure open allure/allure-report`
+
+  NOTE: It is currently not possible to display the step data in the allure report. 
+  To implement this the `testcafe-reporter-allure` will have to be extended.
