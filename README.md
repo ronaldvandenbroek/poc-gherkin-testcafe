@@ -1,4 +1,6 @@
 # poc-gherkin-testcafe
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fronaldvandenbroek%2Fpoc-gherkin-testcafe.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fronaldvandenbroek%2Fpoc-gherkin-testcafe?ref=badge_shield)
+
  A proof of concept testing the coupling between Gherkin (using Cucumber) and TestCafé.
  
 ## Setup
@@ -25,3 +27,7 @@
  Run the tests:
  
  `npm run test:command` or `npm run test:runner`
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fronaldvandenbroek%2Fpoc-gherkin-testcafe.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fronaldvandenbroek%2Fpoc-gherkin-testcafe?ref=badge_large)
