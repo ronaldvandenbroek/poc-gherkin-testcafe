@@ -124,3 +124,5 @@ temp/
 output/*
 *.code-workspace
 .eslintrc.json
+allure/*
+reports/*

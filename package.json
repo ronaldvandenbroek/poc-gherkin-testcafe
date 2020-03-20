@@ -4,8 +4,11 @@
   "description": "A proof of concept testing the coupling between Gherkin-TestCafé and Allure.",
   "main": "",
   "scripts": {
-    "test:command": "npx gherkin-testcafe firefox tests/steps/*.ts tests/steps/*.js tests/features/*.feature",
-    "test:runner": "node tests/runner.js"
+    "test:command:allure": "npx gherkin-testcafe firefox tests/steps/*.ts tests/steps/*.js tests/features/*.feature --reporter allure",
+    "test:command:cucumber": "npx gherkin-testcafe firefox tests/steps/*.ts tests/steps/*.js tests/features/*.feature --reporter cucumber-json:reports/report.json --reporter-app-name='poc-gherkin-testcafe' --reporter-app-version='0.0.1'",
+    "test:runner": "node tests/runner.js",
+    "report:cucumber": "node report-generator.js",
+    "report:allure": "allure generate allure/allure-results --clean -o allure/allure-report && allure open allure/allure-report"
   },
   "keywords": [],
   "author": "Ronald van den Broek",
@@ -17,6 +20,11 @@
   "dependencies": {
     "cucumber": "^5.1.0",
     "gherkin-testcafe": "^2.5.0",
-    "testcafe": "^1.8.2"
+    "testcafe": "^1.8.2",
+    "testcafe-reporter-allure": "^1.0.5",
+    "testcafe-reporter-cucumber-json": "^4.0.0"
+  },
+  "devDependencies": {
+    "multiple-cucumber-html-reporter": "^1.16.0"
   }
 }
