@@ -8,7 +8,7 @@
     "test:command:cucumber": "npx gherkin-testcafe firefox tests/steps/*.ts tests/steps/*.js tests/features/*.feature --reporter cucumber-json:reports/report.json --reporter-app-name='poc-gherkin-testcafe' --reporter-app-version='0.0.1'",
     "test:runner": "node tests/runner.js",
     "report:cucumber": "node report-generator.js",
-    "report:allure": "node allure generate allure/allure-results --clean -o allure/allure-report && allure open allure/allure-report"
+    "report:allure": "allure generate allure/allure-results --clean -o allure/allure-report && allure open allure/allure-report"
   },
   "keywords": [],
   "author": "Ronald van den Broek",
