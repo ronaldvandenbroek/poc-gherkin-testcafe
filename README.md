@@ -27,6 +27,7 @@
  `npm run test:command` or `npm run test:runner`
 
  ## Test reporter
+ ### Allure
  To create a visual report [Allure](http://allure.qatools.ru/) can be used together with the [testcafe-reporter-allure](https://www.npmjs.com/package/testcafe-reporter-allure) package.
 
  Install the integration and Allure commandline:
@@ -53,3 +54,20 @@
 
   NOTE: It is currently not possible to display the step data in the allure report. 
   To implement this the `testcafe-reporter-allure` will have to be extended.
+
+  ### Mutiple-cucumber-html-reporter
+  A second option for a reporter, in combination with Gherkin, is the [Mutiple-cucumber-html-reporter](https://github.com/wswebcreation/multiple-cucumber-html-reporter) that can be used together with the [testcafe-reporter-cucumber-json](https://github.com/hdorgeval/testcafe-reporter-cucumber-json) to generate visual reports.
+
+  Install the integration and reporter:
+
+  `npm install Mutiple-cucumber-html-reporter testcafe-reporter-cucumber-json`
+
+  To generate the results add the following to the test command:
+
+  `--reporter cucumber-json:reports/report.json --reporter-app-name='poc-gherkin-testcafe' --reporter-app-version='0.0.1'`
+
+  To visualise the results in a report run the following command in the root of the project:
+
+  `node report-generator.js`
+
+  NOTE: It is currently not possible to run the reporter via the runner.js, it has to be run via the commandline.
