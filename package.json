@@ -20,7 +20,7 @@
   "dependencies": {
     "cucumber": "^5.1.0",
     "gherkin-testcafe": "^2.5.0",
-    "testcafe": "^1.8.2",
+    "testcafe": "^1.20.1",
     "testcafe-reporter-allure": "^1.0.5",
     "testcafe-reporter-cucumber-json": "^4.0.0"
   },
